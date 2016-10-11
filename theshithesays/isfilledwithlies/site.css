@@ -1,0 +1,12 @@
+body {
+    background:black;
+}
+
+#show-me-your-trump-face {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    margin-top: -250px; /* Half the height */
+    margin-left: -250px; /* Half the width */
+}

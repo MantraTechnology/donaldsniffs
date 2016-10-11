@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Donald Sniffs - Hes Got Boogies</title>
+        <link rel="stylesheet" type="text/css" href="theshithesays/isfilledwithlies/site.css"/>
+    </head>
+    <body>
+
+        <img src="theshithesays/isvulgar/donaldnosniffles.png" id="show-me-your-trump-face"/>
+
+        <script>
+
+            window.addEventListener('load', function() {
+                var audio = new Audio("theshithesays/isadisgrace/sniff2.mp3");
+                var trumpsStupidFace = document.getElementById('show-me-your-trump-face');
+                trumpsStupidFace.addEventListener('click', function(e) {
+                    audio.play();
+                });
+                audio.addEventListener('play', function() {
+                    trumpsStupidFace.setAttribute('data-original', trumpsStupidFace.src);
+                    trumpsStupidFace.src='theshithesays/isvulgar/donaldsniffles.png';
+                });
+                audio.addEventListener('ended', function() {
+                    trumpsStupidFace.src=trumpsStupidFace.getAttribute('data-original');
+                });
+            })
+
+        </script>
+
+    </body>
+</html>
