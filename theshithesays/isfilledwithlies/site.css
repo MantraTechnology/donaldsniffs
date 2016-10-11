@@ -1,14 +1,38 @@
 body {
-    background:black;
-    color:white;
+    background:#E9EBEE;
+    color:black;
     text-align:center;
     font-family: 'Pontano Sans', sans-serif;
 }
 
 #show-me-your-trump-face {
     width:500px;
+    border: solid 1px;
+    border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+    border-radius: 10px;
 }
 
 p {
     font-size:2em;
+}
+
+.content-wrapper {
+    text-align:center;
+    background:white;
+    border: solid 1px;
+    border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+    border-radius: 10px;
+    width:80%;
+    margin:20px auto 0;
+    padding:10px;
+}
+
+@media (max-width:650px) {
+    .content-wrapper {
+        width:95%;
+    }        
+    #show-me-your-trump-face {
+        width:90%;
+        text-align:center;
+    }
 }
