@@ -44,8 +44,25 @@ p {
     display:none;
 }
 
+#sniffle-container-award {
+    left:0;
+    right:0;
+    position:absolute;
+    margin:0 auto;
+    width:300px;
+    bottom:20px;
+    color:white;
+    background:red;
+    font-size:2em;
+    display:none;
+}
+
 #sniffle-container.active #sniffle-container-text {
     display:inline;
+}
+
+#sniffle-container.combo-done-broke #sniffle-container-award {
+    display:inline-block;
 }
 
 @media (max-width:650px) {

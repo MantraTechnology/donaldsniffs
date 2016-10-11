@@ -23,6 +23,7 @@
 
             <div id="sniffle-container">
                 <span id="sniffle-container-text">Tremendous Sniffs!</span>
+                <span id="sniffle-container-award">COMBO BREAKER!</span>
                 <img src="theshithesays/isvulgar/donaldnosniffles.PNG" id="show-me-your-trump-face"/>
             </div>
             <br/>
@@ -35,8 +36,11 @@
         <script>
 
             window.addEventListener('load', function() {
+
                 var audio = new Audio("theshithesays/isadisgrace/sniff2.mp3");
+                var combosDoneBroke = new Audio('theshithesays/isadisgrace/combobreaker.mp3');
                 var trumpsFace = document.getElementById('show-me-your-trump-face');
+                var clicks = 0;
                 
                 preloadSniffles();
                 
@@ -44,17 +48,25 @@
                     audio.play();
                 });
                 audio.addEventListener('play', function() {
-
                     trumpsFace.setAttribute('data-original', trumpsFace.src);
                     trumpsFace.src='theshithesays/isvulgar/donaldsniffles.PNG';
-
                     document.getElementById('sniffle-container').classList.add('active');
-
+                    clicks++;
                 });
                 audio.addEventListener('ended', function() {
                     trumpsFace.src=trumpsFace.getAttribute('data-original');
                     document.getElementById('sniffle-container').classList.remove('active');
+                    if (clicks > 0 && clicks % 5 == 0) {
+                        combosDoneBroke.play();
+                    }
                 });
+                combosDoneBroke.addEventListener('play', function() {
+                    document.getElementById('sniffle-container').classList.add('combo-done-broke');
+                });
+                combosDoneBroke.addEventListener('ended', function() {
+                    document.getElementById('sniffle-container').classList.remove('combo-done-broke');
+                });
+
             })
 
             function preloadSniffles() {
