@@ -13,6 +13,9 @@
             window.addEventListener('load', function() {
                 var audio = new Audio("theshithesays/isadisgrace/sniff2.mp3");
                 var trumpsStupidFace = document.getElementById('show-me-your-trump-face');
+                
+                preloadSniffles();
+                
                 trumpsStupidFace.addEventListener('click', function(e) {
                     audio.play();
                 });
@@ -24,6 +27,11 @@
                     trumpsStupidFace.src=trumpsStupidFace.getAttribute('data-original');
                 });
             })
+
+            function preloadSniffles() {
+                var snifflyNose = new Image();
+                snifflyNose.src = 'theshithesays/isvulgar/donaldsniffles.PNG';
+            }
 
         </script>
 
