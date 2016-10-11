@@ -8,9 +8,10 @@
     <body>
 
         <p>You've got the best clicks, your clicks are the greatest, there are no better clicks.</p>
-        <p>Seriuosly, the best clicks.</p>
 
         <img src="theshithesays/isvulgar/donaldnosniffles.PNG" id="show-me-your-trump-face"/>
+
+        <p>Seriuosly, the best clicks.</p>
 
         <script>
 
@@ -35,6 +36,23 @@
             function preloadSniffles() {
                 var snifflyNose = new Image();
                 snifflyNose.src = 'theshithesays/isvulgar/donaldsniffles.PNG';
+            }
+
+            function updateSnifflesTracker() {
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function () {
+                    var DONE = 4; // readyState 4 means the request is done.
+                    var OK = 200; // status 200 is a successful return.
+                    if (xhr.readyState === DONE) {
+                        if (xhr.status === OK) 
+                        console.log(xhr.responseText); // 'This is the returned text.'
+                        } else {
+                        console.log('Error: ' + xhr.status); // An error occurred during the request.
+                        }
+                    }
+                };
+                xhr.open('PUT', 'https://api.myjson.com/bins/3abrm');
+                xhr.send(null);
             }
 
         </script>
