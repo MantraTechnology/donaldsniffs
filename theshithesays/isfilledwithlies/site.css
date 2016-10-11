@@ -27,6 +27,27 @@ p {
     padding:10px;
 }
 
+#sniffle-container {
+    position:relative;
+    display:inline-block;
+}
+
+#sniffle-container-text {
+    left:0;
+    right:0;
+    position:absolute;
+    margin:0 auto;
+    width:300px;
+    bottom:20px;
+    color:white;
+    font-size:2em;
+    display:none;
+}
+
+#sniffle-container.active #sniffle-container-text {
+    display:inline;
+}
+
 @media (max-width:650px) {
     .content-wrapper {
         width:95%;

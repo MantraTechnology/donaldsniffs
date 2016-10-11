@@ -2,7 +2,7 @@
 <html>
     <head>
         
-        <title>The Donald Sniffs - Hes Got Boogies</title>
+        <title>The Donald Sniffs - He's Got Boogies</title>
         
         <!-- Google Tag Manager -->
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -19,13 +19,16 @@
 
         <div class="content-wrapper">
 
-            <p>You've got the best clicks, your clicks are the greatest, there are no better clicks.</p>
+            <p>I've got the best sniffs, my sniffs are the greatest, there are no better sniffs.</p>
 
-            <img src="theshithesays/isvulgar/donaldnosniffles.PNG" id="show-me-your-trump-face"/>
+            <div id="sniffle-container">
+                <span id="sniffle-container-text">Tremendous Sniffs!</span>
+                <img src="theshithesays/isvulgar/donaldnosniffles.PNG" id="show-me-your-trump-face"/>
+            </div>
             <br/>
             <sub>click it</sub>
 
-            <p>Seriously, the best clicks.</p>
+            <p>Seriously, the best sniffs.</p>
 
         </div>
 
@@ -33,19 +36,24 @@
 
             window.addEventListener('load', function() {
                 var audio = new Audio("theshithesays/isadisgrace/sniff2.mp3");
-                var trumpsStupidFace = document.getElementById('show-me-your-trump-face');
+                var trumpsFace = document.getElementById('show-me-your-trump-face');
                 
                 preloadSniffles();
                 
-                trumpsStupidFace.addEventListener('click', function(e) {
+                trumpsFace.addEventListener('click', function(e) {
                     audio.play();
                 });
                 audio.addEventListener('play', function() {
-                    trumpsStupidFace.setAttribute('data-original', trumpsStupidFace.src);
-                    trumpsStupidFace.src='theshithesays/isvulgar/donaldsniffles.PNG';
+
+                    trumpsFace.setAttribute('data-original', trumpsFace.src);
+                    trumpsFace.src='theshithesays/isvulgar/donaldsniffles.PNG';
+
+                    document.getElementById('sniffle-container').classList.add('active');
+
                 });
                 audio.addEventListener('ended', function() {
-                    trumpsStupidFace.src=trumpsStupidFace.getAttribute('data-original');
+                    trumpsFace.src=trumpsFace.getAttribute('data-original');
+                    document.getElementById('sniffle-container').classList.remove('active');
                 });
             })
 
